@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EGS Maçonnerie : site web
 
-## Getting Started
+Site vitrine d'EGS Maçonnerie, maçonnerie générale et gros œuvre dans le Pays d'Aix.
+Next.js 16 (App Router), entièrement statique, déployé sur Vercel.
 
-First, run the development server:
+## Lancer en local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # vérifie que tout compile
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## À confirmer avec l'entreprise avant la mise en ligne définitive
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+L'entreprise n'avait aucune présence en ligne : ces éléments sont provisoires.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Élément | Où le changer |
+| --- | --- |
+| Téléphone, e-mail, horaires, SIRET, assureur décennale | `lib/site.ts` |
+| Ville de base (Aix-en-Provence) et coordonnées GPS | `lib/site.ts` |
+| Communes desservies | `lib/communes.ts` |
+| Réalisations (textes et photos d'illustration) | `lib/projects.ts` + `public/images/` |
+| Engagements (48 h, décennale…) | `lib/content.ts` |
+| Domaine définitif | variable `NEXT_PUBLIC_SITE_URL` sur Vercel |
 
-## Learn More
+Les photos actuelles sont des photos libres (licence Unsplash), étalonnées pour le site.
+Les remplacer par les vrais chantiers dès que possible : déposer les fichiers dans
+`public/images/`, puis lancer `python3` ou `node` pour régénérer `lib/images.ts`
+(dimensions), ou ajouter l'entrée à la main.
 
-To learn more about Next.js, take a look at the following resources:
+## Formulaire de devis
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`/devis` envoie la demande à `/api/devis`. Pour recevoir les demandes par e-mail,
+définir sur Vercel :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `RESEND_API_KEY` : clé Resend
+- `DEVIS_TO` : adresse qui reçoit les demandes
+- `DEVIS_FROM` : expéditeur sur un domaine vérifié (ex. `Site EGS <devis@egs-maconnerie.fr>`)
 
-## Deploy on Vercel
+Sans ces variables, le formulaire ouvre la messagerie du visiteur avec la demande pré-remplie.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## SEO
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Une page par savoir-faire (`/savoir-faire/...`) et par commune (`/zones-intervention/...`)
+- Données structurées : entreprise locale (GeneralContractor), services, FAQ, fil d'Ariane
+- `sitemap.xml`, `robots.txt`, image de partage générée, métadonnées par page
+- Après la mise en ligne sur le domaine définitif : déclarer le site dans Google Search Console
+  et créer la fiche Google Business Profile (c'est elle qui compte le plus pour « maçon Aix-en-Provence »)
+
+## Direction artistique
+
+- Couleurs : chaux `#f2eee7`, pierre `#d8ccb7`, basalte `#171512`, ocre `#9a4b22` (accent rare)
+- Typographies : Novecento Sans Wide (titres courts, repères), Creato Display (textes), licences libres
+- Signature : le mur qui se monte assise par assise à l'ouverture, et le fil à plomb
+- Effets inspirés de React Bits (SplitText, CountUp, SpotlightCard, Masonry, LogoLoop),
+  joués une fois à l'apparition, jamais pilotés par le défilement, coupés si l'utilisateur
+  a demandé à réduire les animations
