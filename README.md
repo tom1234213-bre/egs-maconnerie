@@ -26,8 +26,7 @@ L'entreprise n'avait aucune présence en ligne : ces éléments sont provisoires
 
 Les photos actuelles sont des photos libres (licence Unsplash), étalonnées pour le site.
 Les remplacer par les vrais chantiers dès que possible : déposer les fichiers dans
-`public/images/`, puis lancer `python3` ou `node` pour régénérer `lib/images.ts`
-(dimensions), ou ajouter l'entrée à la main.
+`public/images/` (en .jpg), puis lancer `npm run images` pour mettre à jour `lib/images.ts`.
 
 ## Formulaire de devis
 

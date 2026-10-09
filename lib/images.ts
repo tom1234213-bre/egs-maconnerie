@@ -1,4 +1,4 @@
-// Dimensions des photos (générées), pour next/image et la grille.
+// Dimensions des photos (générées par scripts/images.mjs), pour next/image et la grille.
 export const imageSizes: Record<string, [number, number]> = {
  "chantier-coulage": [
   2200,
