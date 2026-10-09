@@ -15,7 +15,8 @@ type Props = {
 export function SplitWords({ text, as: Tag = "span", className, delay = 0, stagger = 70, mutedFrom, id }: Props) {
   const words = text.split(" ");
   return (
-    <Tag className={`split ${className ?? ""}`} data-split="" id={id} aria-label={text}>
+    <Tag className={`split ${className ?? ""}`} data-split="" id={id}>
+      <span className="sr-only">{text}</span>
       {words.map((w, i) => (
         <Fragment key={i}>
           <span className="split__w" aria-hidden="true">

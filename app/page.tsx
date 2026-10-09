@@ -34,7 +34,7 @@ function HeroWall() {
               <span
                 key={c}
                 className="wall__brick"
-                style={{ animationDelay: `${180 + fromBottom * 120 + ((c * 37) % 5) * 22}ms` }}
+                style={{ animationDelay: `${60 + fromBottom * 80 + ((c * 37) % 5) * 18}ms` }}
               />
             ))}
           </div>
@@ -76,7 +76,7 @@ export default function HomePage() {
         <div className="hero__content wrap">
           <h1 id="hero-title" className="hero__h1">
             <span className="hero__kicker">Maçon à Aix-en-Provence et dans le Pays d&apos;Aix</span>
-            <SplitWords text="Bâtir d'aplomb." className="hero__title display" delay={1050} stagger={110} />
+            <SplitWords text="Bâtir d'aplomb." className="hero__title display" delay={420} stagger={90} />
           </h1>
           <div className="hero__bottom">
             <p className="hero__lead">

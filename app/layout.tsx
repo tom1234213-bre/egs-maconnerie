@@ -76,6 +76,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" suppressHydrationWarning className={`${display.variable} ${text.variable} no-js`}>
+      <head>
+        {/* Retire « no-js » avant le premier rendu : pas de saut des animations. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.remove('no-js')" }} />
+      </head>
       <body>
         <a href="#contenu" className="skip-link">
           Aller au contenu

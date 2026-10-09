@@ -22,7 +22,7 @@ export function Logo({ className, tone = "ink" }: Props) {
     <span className={`logo logo--${tone} ${className ?? ""}`}>
       <LogoMark className="logo__mark" />
       <span className="logo__type">
-        <span className="logo__name">EGS</span>
+        <span className="logo__name">EGS</span>{" "}
         <span className="logo__sub">Maçonnerie</span>
       </span>
     </span>

@@ -37,7 +37,7 @@ export function SiteHeader() {
   return (
     <header className={`hdr${overHero ? " hdr--over" : ""}${scrolled ? " hdr--solid" : ""}${open ? " hdr--open" : ""}`}>
       <div className="hdr__in wrap">
-        <Link href="/" className="hdr__logo" aria-label={`${site.name}, accueil`}>
+        <Link href="/" className="hdr__logo">
           <Logo tone={overHero ? "light" : "ink"} />
         </Link>
 
