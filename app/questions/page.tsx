@@ -7,9 +7,9 @@ import { faqSchema } from "@/lib/schema";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Questions fréquentes sur vos travaux de maçonnerie",
+  title: "Questions fréquentes sur la maçonnerie",
   description:
-    "Devis, délais, assurances, autorisations, pierre ancienne, murs porteurs : les réponses d'EGS Maçonnerie aux questions qu'on nous pose le plus souvent avant un chantier.",
+    "Devis, délais, autorisations, pierre ancienne, murs porteurs : les réponses d'EGS Maçonnerie aux questions qu'on nous pose le plus souvent avant un chantier.",
   alternates: { canonical: "/questions" },
 };
 
@@ -26,7 +26,7 @@ export default function QuestionsPage() {
         kicker="Questions fréquentes"
         title="Les bonnes questions avant un chantier."
         mutedFrom={3}
-        lead="Devis, délais, autorisations, assurances, choix des matériaux : voici ce qu'on nous demande le plus souvent. Pour tout le reste, un appel suffit."
+        lead="Devis, délais, autorisations, choix des matériaux : voici ce qu'on nous demande le plus souvent. Pour tout le reste, un appel suffit."
       />
       <section className="section--tight">
         <div className="wrap qgroups">

@@ -381,23 +381,21 @@
 
 .project {
   display: grid;
+  /* minmax(0, …) : sans ça, la piste prend la largeur intrinsèque des photos et déborde sur mobile. */
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2.5rem, 5vw, 4rem);
 }
 
+/* Photos de chantier prises au téléphone : verticales et de taille modeste,
+   donc des colonnes égales et plafonnées plutôt qu'une grande photo agrandie. */
 .project__gallery {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(var(--n, 3), minmax(0, 26rem));
   gap: 12px;
-  height: clamp(420px, 62vw, 820px);
-}
-
-.project__fig--0 {
-  grid-row: 1 / span 2;
 }
 
 .project__fig .media {
-  height: 100%;
+  aspect-ratio: 3 / 4;
   border-radius: 3px;
 }
 
@@ -458,18 +456,16 @@
 
 @media (max-width: 800px) {
   .project__gallery {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    height: auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
-  .project__fig--0 {
-    grid-row: auto;
+  .project__fig--0,
+  .project__fig--1:last-child {
     grid-column: 1 / -1;
   }
 
   .project__fig .media {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
   }
 
   .project__fig--0 .media {
@@ -1164,4 +1160,39 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Parcours de l'entreprise : repères plus longs (« 16 ans », « 2007 »). */
+.timeline--wide li {
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+}
+
+.quote {
+  margin: 2.5rem 0 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--ocre);
+}
+
+.quote blockquote p {
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+
+.quote figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+/* Partenaire (Concept Rénovation) sur la page L'entreprise. */
+.partner {
+  max-width: 52rem;
+}
+
+.partner__title {
+  margin-block: 1.25rem 1.5rem;
+}
+
+.partner .lead {
+  margin-bottom: 1.75rem;
 }

@@ -22,10 +22,10 @@ export const services: Service[] = [
     index: "01",
     title: "Maçonnerie générale",
     short: "Murs, dalles, fondations, chapes : le cœur du métier, fait proprement et dans les règles.",
-    metaTitle: "Maçonnerie générale à Aix-en-Provence",
+    metaTitle: "Maçonnerie générale à Salon-de-Provence",
     metaDescription:
-      "Maçon à Aix-en-Provence pour vos travaux de maçonnerie générale : fondations, dalles, murs en parpaing, brique ou pierre, chapes et reprises. Devis gratuit sous 48 h.",
-    h1: "Maçonnerie générale dans le Pays d'Aix",
+      "Maçon à Salon-de-Provence : fondations, dalles, murs en parpaing, brique ou pierre, chapes et reprises. Devis gratuit sous 48 h.",
+    h1: "Maçonnerie générale dans le pays salonais",
     lead:
       "Fondations, dalles, murs, chapes, reprises : la maçonnerie générale, c'est tout ce qui porte une maison. On la traite comme telle, avec des matériaux choisis et des contrôles à chaque étape.",
     body: [
@@ -38,6 +38,8 @@ export const services: Service[] = [
       "Murs en parpaing, brique, béton cellulaire ou pierre",
       "Chaînages, linteaux, poteaux et poutres",
       "Chapes traditionnelles et ragréages",
+      "Escaliers en béton armé",
+      "Cloisons et doublages en plaques de plâtre",
       "Reprises de fissures et de maçonneries anciennes",
     ],
     factors: [
@@ -53,7 +55,7 @@ export const services: Service[] = [
       },
       {
         q: "Qui fournit les matériaux ?",
-        a: "Nous, en général. On travaille avec des négoces du Pays d'Aix et on connaît la qualité de ce qu'on commande. Si vous tenez à un matériau précis, on l'intègre au devis.",
+        a: "Nous, en général. On travaille avec des négoces du pays salonais et on connaît la qualité de ce qu'on commande. Si vous tenez à un matériau précis, on l'intègre au devis.",
       },
     ],
     image: "svc-generale",
@@ -65,9 +67,9 @@ export const services: Service[] = [
     index: "02",
     title: "Gros œuvre de maison",
     short: "De la fouille à la dalle haute : le gros œuvre complet de votre maison individuelle.",
-    metaTitle: "Gros œuvre et construction de maison à Aix-en-Provence",
+    metaTitle: "Gros œuvre de maison à Salon-de-Provence",
     metaDescription:
-      "Gros œuvre de maison individuelle dans le Pays d'Aix : fondations, élévation des murs, planchers, réseaux enterrés. Un seul interlocuteur, un planning tenu. Devis gratuit.",
+      "Gros œuvre de maison individuelle : fondations, murs, planchers, réseaux enterrés. Un seul interlocuteur, un planning tenu. Devis gratuit.",
     h1: "Le gros œuvre de votre maison, de la fouille à la dalle haute",
     lead:
       "Le gros œuvre représente une grande partie du budget d'une maison et toute sa solidité. On le prend en charge du premier coup de pelle jusqu'au plancher haut, avec un interlocuteur unique.",
@@ -82,6 +84,7 @@ export const services: Service[] = [
       "Élévation des murs et des refends",
       "Planchers poutrelles hourdis ou dalles pleines",
       "Réseaux enterrés et regards",
+      "Charpente bois, posée par la même entreprise",
     ],
     factors: [
       "Surface, nombre de niveaux et complexité des plans",
@@ -99,7 +102,7 @@ export const services: Service[] = [
         a: "Pour une maison de plain-pied d'environ 100 m², comptez souvent deux à trois mois de gros œuvre, selon la météo, le terrain et les délais de livraison. On vous donne un planning précis avec le devis.",
       },
     ],
-    image: "svc-maison",
+    image: "c-maison-2",
     detail: "Un point chaque semaine, des photos à chaque étape cachée.",
     related: ["maconnerie-generale", "enduits-facades", "terrasses-exterieurs"],
   },
@@ -108,9 +111,9 @@ export const services: Service[] = [
     index: "03",
     title: "Extension et surélévation",
     short: "Gagner des mètres carrés sans déménager, avec une extension qui se fond dans l'existant.",
-    metaTitle: "Extension de maison et surélévation à Aix-en-Provence",
+    metaTitle: "Extension de maison à Salon-de-Provence",
     metaDescription:
-      "Extension de maison, garage transformé, surélévation dans le Pays d'Aix : fondations, murs, raccord à l'existant et ouverture. Maçon expérimenté, devis gratuit sous 48 h.",
+      "Extension, garage transformé, surélévation : fondations, murs, raccord à l'existant et ouverture. Maçon expérimenté, devis gratuit sous 48 h.",
     h1: "Agrandir votre maison, sans que ça se voie",
     lead:
       "Une bonne extension donne l'impression d'avoir toujours été là. Tout se joue au raccord avec l'existant : fondations, niveaux, appuis, étanchéité et finition des façades.",
@@ -151,9 +154,9 @@ export const services: Service[] = [
     index: "04",
     title: "Ouverture de mur porteur",
     short: "Créer une baie, ouvrir une cuisine : on soutient, on ouvre, on pose la poutre. En sécurité.",
-    metaTitle: "Ouverture de mur porteur à Aix-en-Provence",
+    metaTitle: "Ouverture de mur porteur à Salon-de-Provence",
     metaDescription:
-      "Création d'ouverture dans un mur porteur à Aix-en-Provence et alentours : étaiement, pose d'IPN ou de linteau béton, note de calcul. Travail propre et sécurisé, devis gratuit.",
+      "Ouverture de mur porteur à Salon-de-Provence et alentour : étaiement, IPN ou linteau béton, note de calcul. Travail propre, devis gratuit.",
     h1: "Ouvrir un mur porteur, en toute sécurité",
     lead:
       "Ouvrir une cuisine sur le séjour ou créer une grande baie change une maison. C'est aussi une opération de structure qui ne s'improvise pas.",
@@ -194,14 +197,14 @@ export const services: Service[] = [
     index: "05",
     title: "Rénovation en pierre",
     short: "Bastides, mas et maisons de village : rejointoiement à la chaux, reprises, restauration.",
-    metaTitle: "Rénovation de murs en pierre et maçonnerie ancienne, Pays d'Aix",
+    metaTitle: "Rénovation de murs en pierre, pays salonais",
     metaDescription:
-      "Rénovation de maçonnerie ancienne et de murs en pierre à Aix-en-Provence : rejointoiement à la chaux, reprises de pierre, restauration de bastides et maisons de village. Devis gratuit.",
+      "Maçonnerie ancienne : rejointoiement à la chaux, reprises de pierre, restauration de bastides et de maisons de village. Devis gratuit.",
     h1: "La pierre ancienne, restaurée avec les bons gestes",
     lead:
       "Un mur en pierre a besoin de respirer. Le ciment l'étouffe et le fait souffrir. On restaure les maçonneries anciennes à la chaux, avec des pierres du pays, comme elles ont été bâties.",
     body: [
-      "Dans le Pays d'Aix, les bastides, les mas et les maisons de village sont souvent montés en moellons de calcaire liés à la chaux. Les réparer au ciment, c'est piéger l'humidité dans le mur. On dégarnit les joints abîmés, on remplace les pierres éclatées et on rejointoie avec un mortier de chaux naturelle dont la teinte s'accorde au bâti.",
+      "Dans le pays salonais, les bastides, les mas et les maisons de village sont souvent montés en moellons de calcaire liés à la chaux. Les réparer au ciment, c'est piéger l'humidité dans le mur. On dégarnit les joints abîmés, on remplace les pierres éclatées et on rejointoie avec un mortier de chaux naturelle dont la teinte s'accorde au bâti.",
       "On sait aussi reprendre une voûte, un arc, un encadrement ou un seuil en pierre de taille. Quand une pièce ne peut pas être sauvée, on cherche une pierre de récupération ou de carrière locale qui vieillira de la même façon.",
     ],
     includes: [
@@ -211,6 +214,7 @@ export const services: Service[] = [
       "Murs en pierre apparente ou à pierre vue",
       "Traitement des remontées d'humidité",
       "Réouverture de baies anciennes",
+      "Création d'ouvertures de portes et de fenêtres",
     ],
     factors: [
       "État du mur et profondeur des joints à reprendre",
@@ -225,7 +229,7 @@ export const services: Service[] = [
       },
       {
         q: "Travaillez-vous en secteur protégé ?",
-        a: "Oui. Dans le centre ancien d'Aix ou près d'un monument historique, l'avis de l'Architecte des Bâtiments de France s'applique. On adapte matériaux et teintes à ses prescriptions.",
+        a: "Oui. Dans le centre ancien de Salon ou près d'un monument historique, l'avis de l'Architecte des Bâtiments de France s'applique. On adapte matériaux et teintes à ses prescriptions.",
       },
     ],
     image: "svc-pierre",
@@ -237,9 +241,9 @@ export const services: Service[] = [
     index: "06",
     title: "Murs et clôtures",
     short: "Murs de clôture, de soutènement, restanques en pierre sèche : des murs qui tiennent le terrain.",
-    metaTitle: "Murs de clôture, soutènement et pierre sèche, Aix-en-Provence",
+    metaTitle: "Murs de clôture et soutènement à Salon",
     metaDescription:
-      "Construction de murs de clôture, murs de soutènement et restanques en pierre sèche dans le Pays d'Aix. Fondations dimensionnées, drainage, finitions soignées. Devis gratuit.",
+      "Murs de clôture, murs de soutènement et restanques en pierre sèche : fondations dimensionnées, drainage, finitions soignées. Devis gratuit.",
     h1: "Des murs qui tiennent le terrain",
     lead:
       "Un mur de clôture fixe l'allure d'une maison. Un mur de soutènement, lui, retient des tonnes de terre. Dans les deux cas, ce qu'on ne voit pas compte autant que ce qu'on voit.",
@@ -251,7 +255,8 @@ export const services: Service[] = [
       "Murs de clôture en blocs enduits ou en pierre",
       "Murs de soutènement en béton armé ou en pierre",
       "Restanques et murets en pierre sèche",
-      "Piliers de portail et chaperons",
+      "Piliers de portail, chaperons et pose de portails",
+      "Talus en enrochement",
       "Drainage, barbacanes et remblai",
       "Couvertines et finitions",
     ],
@@ -271,7 +276,7 @@ export const services: Service[] = [
         a: "Le plus souvent, c'est l'eau qui pousse faute de drainage, ou une fondation trop faible. On vient constater, on vous explique la cause et on propose une reprise ou une reconstruction.",
       },
     ],
-    image: "svc-murs",
+    image: "c-escalier-2",
     detail: "Drainage et fondation dimensionnés avant la première pierre.",
     related: ["terrasses-exterieurs", "renovation-pierre", "maconnerie-generale"],
   },
@@ -279,10 +284,10 @@ export const services: Service[] = [
     slug: "terrasses-exterieurs",
     index: "07",
     title: "Terrasses et extérieurs",
-    short: "Terrasses, plages de piscine, escaliers, allées : prolonger la maison dehors.",
-    metaTitle: "Terrasse, plage de piscine et escalier extérieur, Pays d'Aix",
+    short: "Terrasses, piscines, escaliers, allées : prolonger la maison dehors.",
+    metaTitle: "Terrasse, piscine et escalier extérieur",
     metaDescription:
-      "Création de terrasses maçonnées, plages de piscine, escaliers et allées en pierre dans le Pays d'Aix. Dallage pierre, béton désactivé, margelles. Devis gratuit sous 48 h.",
+      "Terrasses, piscines maçonnées, plages, escaliers et allées autour de Salon-de-Provence : dallage, béton désactivé, margelles. Devis gratuit.",
     h1: "Prolonger la maison dehors",
     lead:
       "En Provence, on vit dehors une bonne partie de l'année. Une terrasse bien faite, c'est une pièce en plus : de niveau, drainée, agréable pieds nus et durable.",
@@ -291,7 +296,9 @@ export const services: Service[] = [
       "Escaliers extérieurs, allées, bordures, barbecues maçonnés, murets d'assise : on dessine avec vous les extérieurs qui vont avec la maison et le terrain.",
     ],
     includes: [
-      "Dalles de terrasse avec pentes d'écoulement",
+      "Terrassement et préparation du terrain",
+      "Terrasses en béton, en pavés ou en bois",
+      "Construction de piscines maçonnées",
       "Plages et margelles de piscine",
       "Dallage en pierre naturelle ou reconstituée",
       "Béton désactivé et allées carrossables",
@@ -323,9 +330,9 @@ export const services: Service[] = [
     index: "08",
     title: "Enduits et façades",
     short: "Enduits à la chaux, finitions frotassées ou grattées, ravalement : la façade fait l'allure.",
-    metaTitle: "Enduit de façade à la chaux et ravalement, Aix-en-Provence",
+    metaTitle: "Enduit de façade à la chaux à Salon",
     metaDescription:
-      "Enduits de façade à la chaux, enduits monocouches et ravalement à Aix-en-Provence. Teintes provençales, finitions frotassée, grattée ou talochée. Devis gratuit sous 48 h.",
+      "Enduits de façade à la chaux, monocouches et ravalement : teintes provençales, finitions frotassée, grattée ou talochée. Devis gratuit.",
     h1: "La façade, c'est la première impression",
     lead:
       "Un enduit protège les murs autant qu'il les habille. On choisit avec vous la composition, la teinte et la finition qui conviennent au mur et au paysage.",
@@ -360,6 +367,49 @@ export const services: Service[] = [
     image: "svc-enduit",
     detail: "Échantillons de teinte sur le mur, à la vraie lumière.",
     related: ["renovation-pierre", "extension-surelevation", "construction-maison"],
+  },
+  {
+    slug: "charpente-bois",
+    index: "09",
+    title: "Charpente bois",
+    short: "Étude et pose de charpentes en bois, en neuf comme en rénovation : le toit, par la même équipe que les murs.",
+    metaTitle: "Charpente bois à Salon-de-Provence",
+    metaDescription:
+      "Charpentes bois neuves ou rénovées : maison, extension, réfection de charpente ancienne. Maçonnerie et charpente par la même entreprise.",
+    h1: "La charpente, posée par ceux qui ont monté les murs",
+    lead:
+      "Une charpente repose sur une maçonnerie qui doit l'attendre au bon niveau, avec les bons appuis. Quand la même entreprise fait les deux, il n'y a ni attente ni rejet de responsabilité entre corps de métier.",
+    body: [
+      "Sur une maison neuve ou une extension, on étudie la charpente avec les plans : portées, pente du toit, type de couverture, charges de neige et de vent. Les murs et les chaînages sont réalisés en prévision, puis la charpente est posée dans la foulée.",
+      "En rénovation, on vient voir l'état des bois : pièces attaquées, fléchies ou mal reprises au fil des années. On remplace ce qui doit l'être, on renforce le reste et on reprend les appuis maçonnés si besoin.",
+    ],
+    includes: [
+      "Étude et dimensionnement de la charpente",
+      "Charpente traditionnelle ou fermettes",
+      "Charpente d'extension et de garage",
+      "Reprise des appuis et des murs pignons",
+      "Remplacement et renforcement de pièces de bois",
+      "Coordination avec le couvreur",
+    ],
+    factors: [
+      "Portée, pente et forme du toit",
+      "Essence et section des bois",
+      "Charpente neuve ou reprise de l'existant",
+      "Accès et levage des pièces",
+    ],
+    faq: [
+      {
+        q: "Faites-vous la couverture ?",
+        a: "On réalise la charpente et les maçonneries qui la portent. Pour les tuiles et l'étanchéité, on travaille avec un couvreur et on coordonne le chantier pour que tout s'enchaîne.",
+      },
+      {
+        q: "Ma charpente est-elle à refaire ?",
+        a: "Pas forcément. Souvent, quelques pièces remplacées ou renforcées suffisent. On vient l'examiner, on vous dit ce qui est sain et ce qui ne l'est plus.",
+      },
+    ],
+    image: "svc-charpente",
+    detail: "Murs et charpente par la même équipe : pas d'attente entre corps de métier.",
+    related: ["construction-maison", "extension-surelevation", "maconnerie-generale"],
   },
 ];
 

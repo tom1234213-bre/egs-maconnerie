@@ -18,6 +18,10 @@ export function businessSchema() {
     telephone: site.phoneHref,
     email: site.email,
     priceRange: "€€",
+    legalName: `${site.legal.denomination} SAS`,
+    vatID: site.legal.tva,
+    founder: { "@type": "Person", name: site.owner },
+    sameAs: site.socials.map((s) => s.href),
     address: {
       "@type": "PostalAddress",
       addressLocality: site.city,
@@ -38,6 +42,8 @@ export function businessSchema() {
       "Mur de soutènement",
       "Pierre sèche",
       "Terrasse maçonnée",
+      "Construction de piscine",
+      "Charpente bois",
     ],
   };
 }

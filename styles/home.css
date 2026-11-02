@@ -379,7 +379,7 @@
 
 .svc__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
@@ -482,6 +482,11 @@
 @media (max-width: 1100px) {
   .svc__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Nombre impair de savoir-faire : la dernière carte prend toute la ligne. */
+  .svc__grid > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 }
 

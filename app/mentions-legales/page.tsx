@@ -5,9 +5,8 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
-  description: `Mentions légales du site ${site.name}.`,
+  description: `Mentions légales du site ${site.name} : éditeur, SIRET, coordonnées, hébergement et crédits photo.`,
   alternates: { canonical: "/mentions-legales" },
-  robots: { index: false, follow: true },
 };
 
 export default function MentionsPage() {
@@ -18,18 +17,27 @@ export default function MentionsPage() {
         <div className="wrap legal">
           <h2>Éditeur du site</h2>
           <p>
-            {site.name}
+            Le site {site.name} est édité par la société {site.legal.denomination}, {site.legal.forme}
+            {site.legal.capital ? <> au capital de {site.legal.capital}</> : null}.
             <br />
-            {site.city} ({site.postalCode}), {site.department}
+            Siège social : {site.legal.siege}
             <br />
-            SIRET : {site.siret}
+            SIREN : {site.legal.siren}{site.legal.rcs ? <> RCS {site.legal.rcs}</> : null}
+            <br />
+            SIRET : {site.legal.siret}
+            <br />
+            TVA intracommunautaire : {site.legal.tva}
+            <br />
+            Code APE : {site.legal.ape}
+            <br />
+            Président : {site.legal.president}
             <br />
             Téléphone : {site.phone}
             <br />
             E-mail : {site.email}
           </p>
-          <h2>Assurance professionnelle</h2>
-          <p>Garantie décennale souscrite auprès de : {site.insurer}.</p>
+          <h2>Directeur de la publication</h2>
+          <p>{site.legal.president}, président.</p>
           <h2>Hébergement</h2>
           <p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.</p>
           <h2>Propriété intellectuelle</h2>
@@ -38,7 +46,8 @@ export default function MentionsPage() {
             sans autorisation est interdite.
           </p>
           <h2 id="credits">Crédits photo</h2>
-          <p>Photographies sous licence Unsplash. Merci à leurs auteurs :</p>
+          <p>Photos de chantier et portrait : EGS Maçonnerie.</p>
+          <p>Photos d&apos;illustration sous licence Unsplash. Merci à leurs auteurs :</p>
           <ul className="legal__credits">
             {credits.map((c) => (
               <li key={c.url}>
@@ -48,6 +57,13 @@ export default function MentionsPage() {
               </li>
             ))}
           </ul>
+          <p>
+            Photo de charpente : National Park Service (domaine public), via{" "}
+            <a href="https://commons.wikimedia.org/wiki/File:12._Roof_and_Porch_Construction._(d29dbcf9-302d-4aea-b877-1f8c8a33f339).jpg" rel="noopener" target="_blank">
+              Wikimedia Commons
+            </a>
+            .
+          </p>
           <p>Typographies : Novecento Sans et Creato Display, sous licences libres.</p>
         </div>
       </section>

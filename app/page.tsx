@@ -49,7 +49,7 @@ export default function HomePage() {
   const featured = projects.slice(0, 6).map((p) => ({
     href: `/realisations/${p.slug}`,
     title: p.title,
-    meta: `${p.commune}, ${p.category.toLowerCase()}`,
+    meta: p.commune ? `${p.commune}, ${p.category.toLowerCase()}` : p.category,
     category: p.category,
     ...img(p.cover),
   }));
@@ -75,12 +75,12 @@ export default function HomePage() {
 
         <div className="hero__content wrap">
           <h1 id="hero-title" className="hero__h1">
-            <span className="hero__kicker">Maçon à Aix-en-Provence et dans le Pays d&apos;Aix</span>
+            <span className="hero__kicker">Maçon à Salon-de-Provence et Aix-en-Provence</span>
             <SplitWords text="Bâtir d'aplomb." className="hero__title display" delay={420} stagger={90} />
           </h1>
           <div className="hero__bottom">
             <p className="hero__lead">
-              Maçonnerie générale, gros œuvre et pierre. Des murs droits, des délais tenus, un seul interlocuteur de la
+              Maçonnerie, charpente et rénovation. Des murs droits, des délais tenus, un seul interlocuteur de la
               première visite à la réception.
             </p>
             <div className="hero__actions">
@@ -95,7 +95,7 @@ export default function HomePage() {
           <ul className="hero__facts" role="list">
             <li>Visite et devis gratuits</li>
             <li>Devis sous 48 h</li>
-            <li>Garantie décennale</li>
+            <li>Maçonnerie et charpente</li>
           </ul>
         </div>
         <PlumbLine className="hero__plumb" />
@@ -118,8 +118,9 @@ export default function HomePage() {
             />
             <div className="prose intro__prose" data-reveal="" style={{ "--d": 200 } as React.CSSProperties}>
               <p>
-                EGS Maçonnerie est une entreprise de maçonnerie installée à Aix-en-Provence. On construit, on agrandit et
-                on restaure : maisons neuves, extensions, murs en pierre, terrasses, ouvertures de murs porteurs.
+                EGS Maçonnerie est l&apos;entreprise d&apos;Abdel Guenniche, maçon depuis l&apos;âge de seize ans et installé à
+                Salon-de-Provence depuis 2020. On construit, on agrandit et on restaure : maisons neuves, extensions,
+                charpentes, murs en pierre, terrasses et piscines.
               </p>
               <p>
                 Notre façon de faire tient en peu de mots : venir voir avant de chiffrer, dire les choses franchement,
@@ -169,10 +170,10 @@ export default function HomePage() {
           </div>
           <ul className="svc__grid" role="list">
             {services.map((s, i) => (
-              <li key={s.slug} data-reveal="" style={{ "--d": (i % 4) * 90 } as React.CSSProperties}>
+              <li key={s.slug} data-reveal="" style={{ "--d": (i % 3) * 90 } as React.CSSProperties}>
                 <SpotlightCard href={`/savoir-faire/${s.slug}`} className="svc__card">
                   <span className="svc__media media">
-                    <Image src={`/images/${s.image}.jpg`} alt="" fill sizes="(min-width: 1100px) 24vw, (min-width: 640px) 46vw, 92vw" quality={70} />
+                    <Image src={`/images/${s.image}.jpg`} alt="" fill sizes="(min-width: 1100px) 31vw, (min-width: 640px) 46vw, 92vw" quality={70} />
                   </span>
                   <span className="svc__index">{s.index}</span>
                   <span className="svc__name">{s.title}</span>
@@ -278,8 +279,8 @@ export default function HomePage() {
               La pierre d&apos;ici, <span className="muted">la chaux d&apos;hier, le béton d&apos;aujourd&apos;hui.</span>
             </h2>
             <p className="lead" data-reveal="" style={{ "--d": 150 } as React.CSSProperties}>
-              Aix s&apos;est construite en pierre de Bibémus et de Rognes, liée à la chaux. On respecte ce bâti quand on le
-              restaure, et on choisit le béton armé quand il faut porter lourd. Le bon matériau au bon endroit.
+              Le pays salonais s&apos;est bâti en calcaire de Rognes et des Alpilles, lié à la chaux. On respecte ce bâti
+              quand on le restaure, et on choisit le béton armé quand il faut porter lourd. Le bon matériau au bon endroit.
             </p>
           </div>
           <div className="matter__tiles" data-reveal="" style={{ "--d": 100 } as React.CSSProperties}>
@@ -304,8 +305,8 @@ export default function HomePage() {
       <section className="zone" aria-labelledby="zone-title">
         <div className="zone__media">
           <Image
-            src="/images/sainte-victoire.jpg"
-            alt="La montagne Sainte-Victoire sous un ciel d'orage"
+            src="/images/r-village.jpg"
+            alt="Village provençal en pierre au-dessus des collines, au soleil couchant"
             fill
             sizes="100vw"
             quality={75}
@@ -315,7 +316,7 @@ export default function HomePage() {
           <div className="zone__card" data-reveal="">
             <p className="kicker">Secteur</p>
             <h2 id="zone-title" className="h2">
-              Le Pays d&apos;Aix, <span className="muted">à moins de trente minutes.</span>
+              De Salon à Aix, <span className="muted">à moins de trente minutes.</span>
             </h2>
             <ul className="zone__list" role="list">
               {communes.map((c) => (

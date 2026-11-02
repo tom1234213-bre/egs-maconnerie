@@ -132,7 +132,7 @@ export default async function ServicePage({ params }: PageProps<"/savoir-faire/[
       <section className="section--tight">
         <div className="wrap related">
           <div>
-            <h2 className="detail__box-title">Dans le Pays d&apos;Aix</h2>
+            <h2 className="detail__box-title">Dans le pays salonais</h2>
             <p className="related__communes">
               Nous réalisons ces travaux à{" "}
               {communes.map((c, i) => (

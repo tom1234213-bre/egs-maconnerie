@@ -1,6 +1,6 @@
 # EGS Maçonnerie : site web
 
-Site vitrine d'EGS Maçonnerie, maçonnerie générale et gros œuvre dans le Pays d'Aix.
+Site vitrine d'EGS Maçonnerie (Abdel Guenniche), maçonnerie, charpente et rénovation à Salon-de-Provence.
 Next.js 16 (App Router), entièrement statique, déployé sur Vercel.
 
 ## Lancer en local
@@ -11,21 +11,23 @@ npm run dev        # http://localhost:3000
 npm run build      # vérifie que tout compile
 ```
 
-## À confirmer avec l'entreprise avant la mise en ligne définitive
+## Informations de l'entreprise
 
-L'entreprise n'avait aucune présence en ligne : ces éléments sont provisoires.
+Reprises de l'ancien site Wix (egsabdelguenniche.wixsite.com/egsentreprise13) et de la fiche
+maconnerieinfo.com : téléphone, e-mail, SIRET, adresse, parcours, prestations, zone. Tout est dans `lib/site.ts`.
+
+Reste à confirmer avec l'entreprise :
 
 | Élément | Où le changer |
 | --- | --- |
-| Téléphone, e-mail, horaires, SIRET, assureur décennale | `lib/site.ts` |
-| Ville de base (Aix-en-Provence) et coordonnées GPS | `lib/site.ts` |
-| Communes desservies | `lib/communes.ts` |
-| Réalisations (textes et photos d'illustration) | `lib/projects.ts` + `public/images/` |
-| Engagements (48 h, décennale…) | `lib/content.ts` |
+| Capital social et greffe (RCS) de la SAS EGS : absents du registre public | `lib/site.ts` (`legal`) |
+| Communes des réalisations (vraies photos, lieux inconnus) | `lib/projects.ts` |
+| Engagements (48 h, 30+ maisons…) | `lib/content.ts` |
 | Domaine définitif | variable `NEXT_PUBLIC_SITE_URL` sur Vercel |
 
-Les photos actuelles sont des photos libres (licence Unsplash), étalonnées pour le site.
-Les remplacer par les vrais chantiers dès que possible : déposer les fichiers dans
+Les réalisations et le portrait utilisent les vraies photos d'EGS (`c-*.jpg`, `abdel.jpg`, reprises de
+l'ancien site Wix, en basse définition). Le reste est en photos libres (Unsplash, plus une charpente du
+domaine public). Pour ajouter des photos : déposer les fichiers dans
 `public/images/` (en .jpg), puis lancer `npm run images` pour mettre à jour `lib/images.ts`.
 
 ## Formulaire de devis
@@ -45,7 +47,7 @@ Sans ces variables, le formulaire ouvre la messagerie du visiteur avec la demand
 - Données structurées : entreprise locale (GeneralContractor), services, FAQ, fil d'Ariane
 - `sitemap.xml`, `robots.txt`, image de partage générée, métadonnées par page
 - Après la mise en ligne sur le domaine définitif : déclarer le site dans Google Search Console
-  et créer la fiche Google Business Profile (c'est elle qui compte le plus pour « maçon Aix-en-Provence »)
+  et créer la fiche Google Business Profile (c'est elle qui compte le plus pour « maçon Salon-de-Provence »)
 
 ## Direction artistique
 

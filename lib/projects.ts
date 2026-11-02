@@ -1,12 +1,12 @@
-// Chantiers présentés sur le site.
-// Version de démonstration : photos d'illustration en attendant les photos
-// des vrais chantiers de l'entreprise (à remplacer, voir README).
+// Chantiers présentés sur le site : vrais chantiers d'EGS, photos reprises de
+// l'ancien site (galerie Wix). La commune n'y figurait pas : elle reste vide
+// tant que l'entreprise ne l'a pas précisée.
 
 export type Project = {
   slug: string;
   title: string;
-  commune: string;
-  category: "Pierre" | "Gros œuvre" | "Extérieurs" | "Murs";
+  commune?: string;
+  category: "Gros œuvre" | "Extérieurs" | "Murs";
   service: string;
   cover: string;
   gallery: string[];
@@ -17,158 +17,90 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "mas-restaure-trets",
-    title: "Un mas rendu à la chaux",
-    commune: "Trets",
-    category: "Pierre",
-    service: "renovation-pierre",
-    cover: "p-mas",
-    gallery: ["p-mas", "m-moellons", "geste-taille"],
-    summary: "Façades de moellons dégarnies puis rejointoyées à la chaux, voûte d'entrée reprise pierre à pierre.",
-    story: [
-      "Les joints au ciment posés dans les années 80 retenaient l'humidité et faisaient éclater la pierre. On les a dégarnis à la main, sur toute la façade sud.",
-      "Les pierres trop abîmées ont été remplacées par des moellons de récupération, puis l'ensemble a été rejointoyé avec un mortier de chaux naturelle teinté au sable de pays.",
-    ],
-    facts: [
-      { label: "Durée", value: "6 semaines" },
-      { label: "Matériaux", value: "Chaux NHL, moellons de récupération" },
-      { label: "Surface", value: "180 m² de façade" },
-    ],
-  },
-  {
-    slug: "plage-piscine-venelles",
-    title: "Une plage de piscine en pierre claire",
-    commune: "Venelles",
-    category: "Extérieurs",
-    service: "terrasses-exterieurs",
-    cover: "p-piscine",
-    gallery: ["p-piscine", "p-bassin", "m-taille"],
-    summary: "Dalle reprise avec pentes d'écoulement, margelles et dallage en pierre antidérapante autour du bassin.",
-    story: [
-      "L'ancienne plage en carrelage s'était soulevée par endroits. On a démoli, repris la dalle avec de vraies pentes vers l'extérieur et un joint de fractionnement tous les 15 m².",
-      "Dallage et margelles en pierre claire, choisis pour rester frais sous les pieds en plein mois d'août.",
-    ],
-    facts: [
-      { label: "Durée", value: "3 semaines" },
-      { label: "Matériaux", value: "Pierre calcaire vieillie" },
-      { label: "Surface", value: "65 m²" },
-    ],
-  },
-  {
-    slug: "restanques-le-tholonet",
-    title: "Restanques sous la Sainte-Victoire",
-    commune: "Le Tholonet",
-    category: "Murs",
-    service: "murs-pierre-seche",
-    cover: "p-restanques",
-    gallery: ["p-restanques", "m-seche", "hero-geste"],
-    summary: "Trois niveaux de restanques relevés en pierre sèche, avec drainage repensé pour les pluies d'automne.",
-    story: [
-      "Les anciennes restanques s'étaient effondrées après plusieurs épisodes de pluie. On a trié les pierres sur place, réutilisées à plus de 80 %.",
-      "Montées sans mortier, avec un fruit marqué et un remblai drainant à l'arrière : l'eau passe, le mur reste.",
-    ],
-    facts: [
-      { label: "Durée", value: "5 semaines" },
-      { label: "Matériaux", value: "Pierre sèche du terrain" },
-      { label: "Longueur", value: "70 mètres linéaires" },
-    ],
-  },
-  {
-    slug: "escalier-jardin-eguilles",
-    title: "Un escalier dans le jardin",
-    commune: "Éguilles",
-    category: "Extérieurs",
-    service: "terrasses-exterieurs",
-    cover: "p-escalier",
-    gallery: ["p-escalier", "p-marches", "p-escalier-vegetal"],
-    summary: "Escalier extérieur en pierre reliant la terrasse au potager, marches massives et murets d'accompagnement.",
-    story: [
-      "Le terrain descend de quatre mètres entre la maison et le potager. On a dessiné un escalier aux marches basses et profondes, agréables à monter les bras chargés.",
-      "Les murets de part et d'autre retiennent la terre et accueillent les plantations.",
-    ],
-    facts: [
-      { label: "Durée", value: "2 semaines" },
-      { label: "Matériaux", value: "Pierre massive, béton armé" },
-      { label: "Dénivelé", value: "4 mètres" },
-    ],
-  },
-  {
-    slug: "facade-maison-village-rognes",
-    title: "Une maison de village rejointoyée",
-    commune: "Rognes",
-    category: "Pierre",
-    service: "renovation-pierre",
-    cover: "p-facade",
-    gallery: ["p-facade", "m-calcaire", "m-plate"],
-    summary: "Façade en pierre de Rognes nettoyée, joints repris à pierre vue, encadrements restaurés.",
-    story: [
-      "La façade avait été enduite au ciment dans sa partie basse. On a tout retiré pour retrouver la pierre de Rognes d'origine.",
-      "Rejointoiement à pierre vue, à la chaux, dans une teinte proche des joints anciens encore sains.",
-    ],
-    facts: [
-      { label: "Durée", value: "3 semaines" },
-      { label: "Matériaux", value: "Pierre de Rognes, chaux" },
-      { label: "Surface", value: "90 m²" },
-    ],
-  },
-  {
-    slug: "cuisine-ete-meyreuil",
-    title: "Une cuisine d'été sous la tonnelle",
-    commune: "Meyreuil",
-    category: "Extérieurs",
-    service: "terrasses-exterieurs",
-    cover: "p-tonnelle",
-    gallery: ["p-tonnelle", "m-moellons", "geste-outils"],
-    summary: "Mur en pierre maçonnée, plan de travail et banc intégrés, sous une treille existante.",
-    story: [
-      "Le client voulait cuisiner dehors sans tourner le dos à ses invités. On a monté un mur en pierre qui protège du mistral et intègre plan de travail et banc.",
-      "Dalle légèrement inclinée pour l'écoulement, sol en pierre posé à joints serrés.",
-    ],
-    facts: [
-      { label: "Durée", value: "10 jours" },
-      { label: "Matériaux", value: "Moellons calcaires, chaux" },
-      { label: "Surface", value: "25 m²" },
-    ],
-  },
-  {
-    slug: "maison-bouc-bel-air",
-    title: "Le gros œuvre d'une maison neuve",
-    commune: "Bouc-Bel-Air",
+    slug: "maison-a-etage",
+    title: "Une maison à étage, des fondations au toit",
     category: "Gros œuvre",
     service: "construction-maison",
-    cover: "p-dalle",
-    gallery: ["p-dalle", "chantier-ombres", "chantier-coulage"],
-    summary: "Fondations, vide sanitaire, élévation et plancher d'une maison de 140 m² sur terrain en pente.",
+    cover: "c-maison-2",
+    gallery: ["c-maison-2", "c-maison-1"],
+    summary: "Gros œuvre complet d'une maison à étage : soubassement, murs en brique, planchers, puis charpente et couverture en tuiles.",
     story: [
-      "Terrain en pente et sol argileux : l'étude de sol a conduit à des fondations renforcées. On a travaillé main dans la main avec le bureau d'études.",
-      "Chaque étape cachée (fondations, ferraillage, réseaux) a été photographiée et transmise au client et à l'architecte.",
+      "Le soubassement est monté en blocs béton, puis les murs en brique s'élèvent jusqu'à l'étage, avec chaînages et linteaux coulés en place. Le porche d'entrée, sur poteaux, est maçonné en même temps que la maison.",
+      "La charpente et la couverture sont posées dans la foulée, par la même entreprise : pas d'attente entre les corps de métier, le chantier avance d'un seul tenant.",
     ],
     facts: [
-      { label: "Durée", value: "11 semaines" },
-      { label: "Système", value: "Bloc béton, plancher hourdis" },
-      { label: "Surface", value: "140 m²" },
+      { label: "Travaux", value: "Gros œuvre, charpente, couverture" },
+      { label: "Matériaux", value: "Brique, bloc béton, béton armé, tuiles" },
     ],
   },
   {
-    slug: "coupole-aix",
-    title: "Une coupole reprise à l'ancienne",
-    commune: "Aix-en-Provence",
-    category: "Pierre",
-    service: "renovation-pierre",
-    cover: "p-coupole",
-    gallery: ["p-coupole", "geste-taille", "m-taille"],
-    summary: "Reprise d'une maçonnerie de pierre en coupole, pierre par pierre, avec un mortier de chaux adapté.",
+    slug: "piscine-maconnee",
+    title: "Une piscine maçonnée",
+    category: "Extérieurs",
+    service: "terrasses-exterieurs",
+    cover: "c-piscine-1",
+    gallery: ["c-piscine-1", "c-piscine-2", "c-piscine-3"],
+    summary: "Terrassement, radier en béton armé et parois maçonnées : une piscine construite dans les règles, avant la pose du revêtement.",
     story: [
-      "Un ouvrage où chaque pierre compte. On a démonté les parties instables en numérotant les pierres pour les reposer à leur place.",
-      "Échafaudage sur mesure et travail à la main du début à la fin.",
+      "Une fois le terrassement fait, le radier est ferraillé puis coulé, avec les attentes qui relient le fond du bassin à ses parois.",
+      "Les murs du bassin sont ensuite montés et chaînés. C'est cette structure, invisible une fois la piscine en eau, qui fait qu'elle tient dans le temps.",
     ],
     facts: [
-      { label: "Durée", value: "4 semaines" },
-      { label: "Matériaux", value: "Pierre calcaire, chaux" },
-      { label: "Technique", value: "Démontage et remontage" },
+      { label: "Travaux", value: "Terrassement, radier, parois" },
+      { label: "Matériaux", value: "Béton armé, blocs" },
+    ],
+  },
+  {
+    slug: "escalier-murs-soutenement",
+    title: "Un escalier entre deux murs de soutènement",
+    category: "Murs",
+    service: "murs-pierre-seche",
+    cover: "c-escalier-1",
+    gallery: ["c-escalier-1", "c-escalier-2", "c-escalier-3"],
+    summary: "Un terrain en pente devant la maison : terrassement, murs de soutènement et escalier en béton pour relier les niveaux.",
+    story: [
+      "Le talus est d'abord repris à la mini-pelle. On monte ensuite les murs de soutènement qui tiennent les terres de part et d'autre, puis l'escalier qui descend de la maison vers le jardin.",
+      "Une fois les terres remises en place et les massifs replantés, l'ouvrage se fond dans le jardin.",
+    ],
+    facts: [
+      { label: "Travaux", value: "Terrassement, soutènement, escalier" },
+      { label: "Matériaux", value: "Béton armé, blocs enduits" },
+    ],
+  },
+  {
+    slug: "allee-carrossable",
+    title: "Une allée carrossable jusqu'au garage",
+    category: "Extérieurs",
+    service: "terrasses-exterieurs",
+    cover: "c-allee-1",
+    gallery: ["c-allee-1", "c-allee-2"],
+    summary: "Une allée tenue par des bordures béton, avec un muret le long du talus et des piliers à l'entrée.",
+    story: [
+      "Le terrain est décaissé et nivelé, puis les bordures sont posées au cordeau de chaque côté. Elles tiennent le gravier et dessinent l'allée jusqu'au garage.",
+      "Le long du talus, un muret retient la terre ; à l'entrée, deux piliers maçonnés préparent la pose du portail.",
+    ],
+    facts: [
+      { label: "Travaux", value: "Terrassement, bordures, muret, piliers" },
+      { label: "Matériaux", value: "Béton, gravier" },
+    ],
+  },
+  {
+    slug: "maison-plain-pied",
+    title: "Une maison de plain-pied en brique",
+    category: "Gros œuvre",
+    service: "construction-maison",
+    cover: "c-plainpied-1",
+    gallery: ["c-plainpied-1", "c-plainpied-2"],
+    summary: "Élévation des murs en brique sur un soubassement en blocs béton, avec poteaux et linteaux coulés en place.",
+    story: [
+      "Sur le soubassement, les murs en brique montent assise par assise. Les poteaux et linteaux en béton armé encadrent les grandes ouvertures côté jardin.",
+    ],
+    facts: [
+      { label: "Travaux", value: "Gros œuvre" },
+      { label: "Matériaux", value: "Brique, bloc béton, béton armé" },
     ],
   },
 ];
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
-export const projectCategories = ["Tous", "Pierre", "Gros œuvre", "Murs", "Extérieurs"] as const;
+export const projectCategories = ["Tous", "Gros œuvre", "Murs", "Extérieurs"] as const;

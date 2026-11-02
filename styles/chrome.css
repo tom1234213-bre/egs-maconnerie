@@ -352,6 +352,12 @@ html.menu-open {
   color: var(--on-nuit-2);
 }
 
+.ftr__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
 .ftr__base a:hover {
   color: var(--on-nuit);
 }

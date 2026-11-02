@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const alt = "EGS Maçonnerie, maçon à Aix-en-Provence : bâtir d'aplomb";
+export const alt = "EGS Maçonnerie, maçon à Salon-de-Provence : bâtir d'aplomb";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

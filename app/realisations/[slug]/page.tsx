@@ -16,10 +16,10 @@ export async function generateMetadata({ params }: PageProps<"/realisations/[slu
   const { slug } = await params;
   const p = getProject(slug);
   if (!p) return {};
-  const title = `${p.title}, ${p.commune}`;
+  const title = p.commune ? `${p.title}, ${p.commune}` : p.title;
   return {
     title,
-    description: `${p.summary} Un chantier d'EGS Maçonnerie ${atCommune(p.commune)}.`,
+    description: `${p.summary} Un chantier d'EGS Maçonnerie${p.commune ? ` ${atCommune(p.commune)}` : ""}.`,
     alternates: { canonical: `/realisations/${p.slug}` },
     openGraph: { title, images: [{ url: `/images/${p.cover}.jpg` }] },
   };
@@ -41,13 +41,13 @@ export default async function ProjectPage({ params }: PageProps<"/realisations/[
           { name: "Réalisations", path: "/realisations" },
           { name: p.title, path: `/realisations/${p.slug}` },
         ]}
-        kicker={`${p.commune}  ${p.category}`}
+        kicker={p.commune ? `${p.commune}  ${p.category}` : p.category}
         title={p.title}
         lead={p.summary}
       />
       <section className="section--tight">
         <div className="wrap project">
-          <div className="project__gallery">
+          <div className="project__gallery" style={{ "--n": p.gallery.length } as React.CSSProperties}>
             {p.gallery.map((key, n) => {
               const im = img(key);
               return (
@@ -55,10 +55,10 @@ export default async function ProjectPage({ params }: PageProps<"/realisations/[
                   <div className="media">
                     <Image
                       src={im.src}
-                      alt={n === 0 ? `${p.title} ${atCommune(p.commune)}` : ""}
+                      alt={n === 0 ? p.title : ""}
                       fill
                       priority={n === 0}
-                      sizes={n === 0 ? "(min-width: 1000px) 62vw, 96vw" : "(min-width: 1000px) 30vw, 48vw"}
+                      sizes={n === 0 ? "(min-width: 800px) 416px, 92vw" : "(min-width: 800px) 416px, 46vw"}
                       quality={78}
                     />
                   </div>
@@ -73,10 +73,12 @@ export default async function ProjectPage({ params }: PageProps<"/realisations/[
               ))}
             </div>
             <dl className="project__facts" data-reveal="">
-              <div>
-                <dt>Commune</dt>
-                <dd>{commune ? <Link href={`/zones-intervention/${commune.slug}`}>{p.commune}</Link> : p.commune}</dd>
-              </div>
+              {p.commune ? (
+                <div>
+                  <dt>Commune</dt>
+                  <dd>{commune ? <Link href={`/zones-intervention/${commune.slug}`}>{p.commune}</Link> : p.commune}</dd>
+                </div>
+              ) : null}
               {p.facts.map((f) => (
                 <div key={f.label}>
                   <dt>{f.label}</dt>
@@ -96,7 +98,7 @@ export default async function ProjectPage({ params }: PageProps<"/realisations/[
           <Link href={`/realisations/${next.slug}`} className="project__next" data-reveal="">
             <span className="kicker">Chantier suivant</span>
             <span className="project__next-title">{next.title}</span>
-            <span className="project__next-meta">{next.commune}</span>
+            <span className="project__next-meta">{next.commune ?? next.category}</span>
           </Link>
         </div>
       </section>

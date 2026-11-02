@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps<"/zones-interventio
   const title = `Maçon ${atCommune(c.name)} (${c.postalCode})`;
   return {
     title,
-    description: `Entreprise de maçonnerie ${atCommune(c.name)} : ${c.typical.join(", ").toLowerCase()}, gros œuvre et rénovation. EGS Maçonnerie, ${c.distance === "Notre base" ? "basée à Aix" : `à ${c.distance} d'Aix`}. Visite et devis gratuits.`,
+    description: `Maçon ${atCommune(c.name)} : ${c.typical.join(", ").toLowerCase()}. EGS Maçonnerie, ${c.distance === "Notre base" ? "basée à Salon" : `à ${c.distance} de Salon`}, devis gratuit.`,
     alternates: { canonical: `/zones-intervention/${c.slug}` },
   };
 }
@@ -39,7 +39,7 @@ export default async function CommunePage({ params }: PageProps<"/zones-interven
           { name: "Secteur", path: "/zones-intervention" },
           { name: c.name, path: `/zones-intervention/${c.slug}` },
         ]}
-        kicker={`${c.postalCode}  ${c.distance === "Notre base" ? "Notre base" : `${c.distance} d'Aix`}`}
+        kicker={`${c.postalCode}  ${c.distance === "Notre base" ? "Notre base" : `${c.distance} de Salon`}`}
         title={`Maçon ${atCommune(c.name)}`}
         lead={c.text}
       >

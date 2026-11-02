@@ -30,6 +30,11 @@ export function SiteFooter() {
               {site.city}, {site.department}
             </span>
             <span>{site.hours}</span>
+            {site.socials.map((s) => (
+              <a key={s.href} href={s.href} rel="noopener" target="_blank">
+                {s.label}
+              </a>
+            ))}
           </address>
         </div>
 
@@ -61,6 +66,11 @@ export function SiteFooter() {
               <li><Link href="/realisations">Réalisations</Link></li>
               <li><Link href="/questions">Questions fréquentes</Link></li>
               <li><Link href="/devis">Devis gratuit</Link></li>
+              <li>
+                <a href={site.partner.href} rel="noopener" target="_blank">
+                  Partenaire : {site.partner.name}
+                </a>
+              </li>
               <li><Link href="/mentions-legales">Mentions légales</Link></li>
               <li><Link href="/confidentialite">Confidentialité</Link></li>
             </ul>
@@ -73,8 +83,16 @@ export function SiteFooter() {
         </div>
 
         <div className="ftr__base">
-          <span>© {new Date().getFullYear()} {site.name}. Maçonnerie générale et gros œuvre dans le Pays d&apos;Aix.</span>
-          <Link href="/mentions-legales#credits">Crédits photo</Link>
+          <span>© {new Date().getFullYear()} {site.name}. Maçonnerie, charpente et rénovation dans le pays salonais.</span>
+          <span className="ftr__links">
+            <Link href="/mentions-legales#credits">Crédits photo</Link>
+            <span>
+              Fait avec le <span role="img" aria-label="cœur">❤️</span> par{" "}
+              <a href="https://oculot.studio" rel="noopener" target="_blank">
+                oculot.studio
+              </a>
+            </span>
+          </span>
         </div>
       </div>
     </footer>

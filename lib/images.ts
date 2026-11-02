@@ -1,5 +1,57 @@
 // Dimensions des photos (générées par scripts/images.mjs), pour next/image et la grille.
 export const imageSizes: Record<string, [number, number]> = {
+ "abdel": [
+  679,
+  1400
+ ],
+ "c-allee-1": [
+  720,
+  960
+ ],
+ "c-allee-2": [
+  720,
+  960
+ ],
+ "c-escalier-1": [
+  720,
+  960
+ ],
+ "c-escalier-2": [
+  720,
+  960
+ ],
+ "c-escalier-3": [
+  720,
+  960
+ ],
+ "c-maison-1": [
+  503,
+  583
+ ],
+ "c-maison-2": [
+  540,
+  960
+ ],
+ "c-piscine-1": [
+  720,
+  960
+ ],
+ "c-piscine-2": [
+  540,
+  960
+ ],
+ "c-piscine-3": [
+  720,
+  960
+ ],
+ "c-plainpied-1": [
+  540,
+  674
+ ],
+ "c-plainpied-2": [
+  540,
+  960
+ ],
  "chantier-coulage": [
   2200,
   3301
@@ -121,6 +173,10 @@ export const imageSizes: Record<string, [number, number]> = {
   1461
  ],
  "sainte-victoire": [
+  2200,
+  1467
+ ],
+ "svc-charpente": [
   2200,
   1467
  ],

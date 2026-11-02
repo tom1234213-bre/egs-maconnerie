@@ -175,7 +175,7 @@ export function DevisForm({ services, communes, email, phone }: Props) {
               onChange={set("commune")}
               required={step === 1}
               autoComplete="address-level2"
-              placeholder="Aix-en-Provence"
+              placeholder="Salon-de-Provence"
             />
             <datalist id={`${uid}-communes`}>
               {communes.map((c) => (
