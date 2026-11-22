@@ -10,6 +10,7 @@ import "@/styles/base.css";
 import "@/styles/chrome.css";
 import "@/styles/home.css";
 import "@/styles/pages.css";
+import Script from "next/script";
 
 const display = localFont({
   src: [
@@ -89,6 +90,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteFooter />
         <RevealObserver />
         <JsonLd data={[businessSchema(), websiteSchema()]} />
+        {/* Suivi Oculot (sans cookie) : visites, carte de chaleur, erreurs JS, dans le CRM du studio */}
+        <Script src="https://crm.oculot.studio/t.js?k=e9fdf874010940e8" strategy="afterInteractive" />
       </body>
     </html>
   );
