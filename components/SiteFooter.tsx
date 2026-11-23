@@ -63,6 +63,7 @@ export function SiteFooter() {
               <li><Link href="/devis">Devis gratuit</Link></li>
               <li><Link href="/mentions-legales">Mentions légales</Link></li>
               <li><Link href="/confidentialite">Confidentialité</Link></li>
+              <li><a href="#cookies">Gestion des cookies</a></li>
             </ul>
           </nav>
         </div>

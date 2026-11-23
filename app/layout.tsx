@@ -10,6 +10,7 @@ import "@/styles/base.css";
 import "@/styles/chrome.css";
 import "@/styles/home.css";
 import "@/styles/pages.css";
+import { ConsentementGA } from "@/components/ConsentementGA";
 
 const display = localFont({
   src: [
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteFooter />
         <RevealObserver />
         <JsonLd data={[businessSchema(), websiteSchema()]} />
+        <ConsentementGA />
       </body>
     </html>
   );
